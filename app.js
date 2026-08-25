@@ -1,38 +1,14 @@
 ﻿// Build photos list by reading the `assets/` folder when possible.
 // Fallback: use the previously generated naming scheme.
 async function buildPhotoList() {
-  // Try to fetch the directory listing first (works with simple static servers like python -m http.server)
-  try {
-    const resp = await fetch("Actifs/");
-    if (resp.ok) {
-      const text = await resp.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "text/html");
-      const links = Array.from(doc.querySelectorAll("a"))
-        .map((a) => a.getAttribute("href"))
-        .filter((h) => h && /\.(jpe?g|png|webp)$/i.test(h));
-      if (links.length) return links;
-    }
-  } catch (e) {
-    // ignore
-  }
-
-  // Fallback: Try to load an optional manifest (assets/manifest.json should be a JSON array of filenames)
-  try {
-    const m = await fetch("Actifs/manifest.json");
-    if (m.ok) {
-      const list = await m.json();
-      if (Array.isArray(list) && list.length) return list;
-    }
-  } catch (e) {
-    // ignore
-  }
-
-  // Fallback to the generated naming pattern (keeps backward compatibility)
   const totalPhotos = 378;
+
   return [
     "hero-bg.jpg",
-    ...Array.from({ length: totalPhotos }, (_, index) => `Mariage éléna & arthur-${index + 1}.jpg`)
+    ...Array.from(
+      { length: totalPhotos },
+      (_, index) => `Mariage eléna & arthur-${index + 1}.jpg`
+    )
   ];
 }
 
