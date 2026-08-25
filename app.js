@@ -4,7 +4,6 @@ async function buildPhotoList() {
   const totalPhotos = 378;
 
   return [
-    "hero-bg.jpg",
     ...Array.from(
       { length: totalPhotos },
       (_, index) => `Mariage eléna & arthur-${index + 1}.jpg`
