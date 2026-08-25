@@ -6,7 +6,7 @@ async function buildPhotoList() {
 Retour [
   ...Réseau.de(
     { Longueur: totalPhotos },
-    (_, Index) => `Actifs/Mariage éléna & arthur-${Index + 1}.jpg`
+    (_, Index) => `Mariage éléna & arthur-${Index + 1}.jpg`
   )
 ];
 // photos will be populated at runtime by init()
