@@ -185,7 +185,7 @@ async function downloadAll() {
   }
 
   const zip = new JSZip();
-  const zipName = "mariage-elena-arthur.zip";
+  const zipName = "Mariage-elena-arthur.zip";
 
   try {
     await Promise.all(
@@ -231,7 +231,7 @@ async function downloadAll() {
 function makeLabel(name) {
   let label = name.replace(/\.(jpe?g|png|webp)$/i, "");
   label = label.replace(/[-_]+/g, " ");
-  label = label.replace(/mariage éléna & arthur/i, "Mariage Élena & Arthur");
+  label = label.replace(/Mariage éléna & arthur/i, "Mariage Élena & Arthur");
   return label;
 }
 
