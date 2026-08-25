@@ -1,6 +1,5 @@
 ﻿// Build photos list by reading the `assets/` folder when possible.
 // Fallback: use the previously generated naming scheme.
-async function buildPhotoList() {
   async function buildPhotoList() {
     const response = await fetch("photos.json");
     const list = await response.json();
