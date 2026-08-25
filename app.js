@@ -1,14 +1,12 @@
 ﻿// Build photos list by reading the `assets/` folder when possible.
 // Fallback: use the previously generated naming scheme.
 async function buildPhotoList() {
-  const totalPhotos = 378;
+  async function buildPhotoList() {
+    const response = await fetch("photos.json");
+    const list = await response.json();
+    return list;
+}
 
-Retour [
-  ...Réseau.de(
-    { Longueur: totalPhotos },
-    (_, Index) => `Mariage éléna & arthur-${Index + 1}.jpg`
-  )
-];
 // photos will be populated at runtime by init()
 let photos = [];
 
