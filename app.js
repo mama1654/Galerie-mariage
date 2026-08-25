@@ -29,10 +29,10 @@ async function buildPhotoList() {
   }
 
   // Fallback to the generated naming pattern (keeps backward compatibility)
-  const totalPhotos = 400;
+  const totalPhotos = 378;
   return [
     "hero-bg.jpg",
-    ...Array.from({ length: totalPhotos }, (_, index) => `mariage éléna & arthur-${index + 1}.jpg`),
+    ...Array.from({ length: totalPhotos }, (_, index) => `Mariage éléna & arthur-${index + 1}.jpg`)
   ];
 }
 
