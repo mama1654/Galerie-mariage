@@ -3,7 +3,7 @@
 async function buildPhotoList() {
   // Try to fetch the directory listing first (works with simple static servers like python -m http.server)
   try {
-    const resp = await fetch("assets/");
+    const resp = await fetch("Actifs/");
     if (resp.ok) {
       const text = await resp.text();
       const parser = new DOMParser();
@@ -19,7 +19,7 @@ async function buildPhotoList() {
 
   // Fallback: Try to load an optional manifest (assets/manifest.json should be a JSON array of filenames)
   try {
-    const m = await fetch("assets/manifest.json");
+    const m = await fetch("Actifs/manifest.json");
     if (m.ok) {
       const list = await m.json();
       if (Array.isArray(list) && list.length) return list;
@@ -29,7 +29,7 @@ async function buildPhotoList() {
   }
 
   // Fallback to the generated naming pattern (keeps backward compatibility)
-  const totalPhotos = 335;
+  const totalPhotos = 400;
   return [
     "hero-bg.jpg",
     ...Array.from({ length: totalPhotos }, (_, index) => `mariage éléna & arthur-${index + 1}.jpg`),
