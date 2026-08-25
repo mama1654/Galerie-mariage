@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie photo</title>
+    <meta
+      name="description"
+      content="Galerie photo élégante avec téléchargement individuel et téléchargement global."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <div class="hero__left">
+          <h1>Galerie</h1>
+          <div class="hero__meta">
+            <span class="hero__year">2026</span>
+            <span>Photographie réalisée par Emma Thion</span>
+          </div>
+          <div class="hero__actions">
+            <button id="download-all" class="btn btn--primary hero__cta">Télécharger toutes les photographies</button>
+            <a class="social-link" href="https://www.instagram.com/emma_p071/" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="gallery-section">
+        <div class="section-heading">
+          <h2>Galerie</h2>
+          <p>Chaque image peut être téléchargée individuellement.</p>
+        </div>
+        <div id="gallery" class="gallery" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
