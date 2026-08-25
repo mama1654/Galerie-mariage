@@ -3,17 +3,14 @@
 async function buildPhotoList() {
   const totalPhotos = 378;
 
-  return [
-    ...Array.from(
-      { length: totalPhotos },
-      (_, index) => `Mariage eléna & arthur-${index + 1}.jpg`
-    )
-  ];
-}
-
+Retour [
+  ...Réseau.de(
+    { Longueur: totalPhotos },
+    (_, Index) => `Actifs/Mariage éléna & arthur-${Index + 1}.jpg`
+  )
+];
 // photos will be populated at runtime by init()
 let photos = [];
-
 
 const gallery = document.getElementById("gallery");
 const downloadAllButton = document.getElementById("download-all");
